@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Apex Interactive Staff Handbook</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+        .banner {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #ff0000;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+        .banner-triangle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 150px 300px 0;
+            border-color: transparent #ff0000 transparent transparent;
+            z-index: 1;
+        }
+        .banner h1 {
+            margin: 0;
+            font-size: 48px;
+            line-height: 1;
+        }
+        .banner h1 span {
+            color: #ff0000;
+            display: block;
+        }
+        .banner h2 {
+            margin: 5px 0 20px 0;
+            font-style: italic;
+            font-weight: normal;
+            border: none;
+        }
+        .banner h3 {
+            margin: 0;
+            font-size: 32px;
+        }
+        .banner p {
+            margin: 5px 0 0 0;
+            color: #ff0000;
+            font-size: 18px;
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 32px;
+        }
+        h2 {
+            color: #ff0000;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #e0e0e0;
+            margin-top: 20px;
+        }
+        .rule {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border-left: 4px solid #ff0000;
+        }
+        .rule-id {
+            font-weight: bold;
+            color: #ff0000;
+            margin-right: 10px;
+        }
+        .rule-definition {
+            background-color: #333;
+            padding: 15px;
+            margin: 10px 0 20px 0;
+            border-left: 2px solid #ff0000;
+        }
+        .example {
+            background-color: #3a3a3a;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 2px solid #888;
+        }
+        .allowed {
+            border-left: 2px solid #4CAF50;
+        }
+        .not-allowed {
+            border-left: 2px solid #f44336;
+        }
+        .toc {
+            background-color: #2a2a2a;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        .toc a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2a2a2a;
+        }
+        th {
+            background-color: #ff0000;
+            color: #fff;
+            text-align: left;
+            padding: 12px;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #444;
+        }
+        tr:hover {
+            background-color: #333;
+        }
+        .class-a {
+            border-left: 5px solid #ffeb3b; /* Yellow */
+        }
+        .class-b {
+            border-left: 5px solid #ff9800; /* Orange */
+        }
+        .class-c {
+            border-left: 5px solid #f44336; /* Red */
+        }
+        .class-d {
+            border-left: 5px solid #9c27b0; /* Purple */
+        }
+        .command {
+            font-family: 'Courier New', monospace;
+            background-color: #333;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-triangle"></div>
+        <div class="banner-content">
+            <h1>APEX <span>INTERACTIVE</span></h1>
+            <h2>REALISTIC ROLEPLAY COMMUNITY</h2>
+            <h3>STAFF CODE OF CONDUCT</h3>
+            <p>COMMUNITY SAFETY TEAM</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <div class="toc-item"><a href="#punishment">Punishment Classification System</a></div>
+            <div class="toc-item"><a href="#general">General Rules</a></div>
+            <div class="toc-item"><a href="#roleplay">Roleplay Rules</a></div>
+            <div class="toc-item"><a href="#communication">Communication Rules</a></div>
+            <div class="toc-item"><a href="#vehicle">Vehicle Rules</a></div>
+            <div class="toc-item"><a href="#faction">Faction Rules</a></div>
+            <div class="toc-item"><a href="#administration">Administration Rules</a></div>
+            <div class="toc-item"><a href="#penalties">Penalty System</a></div>
+            <div class="toc-item"><a href="#discord-commands">Discord Moderation Commands</a></div>
+            <div class="toc-item"><a href="#ingame-commands">In-Game Staff Commands</a></div>
+        </div>
+
+        <section id="punishment">
+            <h2>Punishment Classification System</h2>
+            <p>The following classification system is used to determine appropriate punishments for rule violations. Staff members must adhere to these guidelines when issuing penalties.</p>
+            
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Description</th>
+                    <th>Punishment</th>
+                    <th>Examples</th>
+                </tr>
+                <tr class="class-a">
+                    <td><strong>Class A</strong></td>
+                    <td>Minor infractions that disrupt roleplay or violate basic rules</td>
+                    <td>Warning</td>
+                    <td>Minor metagaming, accidental powergaming, minor chat violations</td>
+                </tr>
+                <tr class="class-b">
+                    <td><strong>Class B</strong></td>
+                    <td>Moderate infractions or repeated Class A violations</td>
+                    <td>Temporary Ban (1-5 days, 1 day per offense)</td>
+                    <td>RDM, VDM, severe metagaming, repeated powergaming</td>
+                </tr>
+                <tr class="class-c">
+                    <td><strong>Class C</strong></td>
+                    <td>Serious infractions or repeated Class B violations</td>
+                    <td>Appealable Permanent Ban</td>
+                    <td>Severe harassment, extreme RDM/VDM, repeated rule violations after temporary bans</td>
+                </tr>
+                <tr class="class-d">
+                    <td><strong>Class D</strong></td>
+                    <td>Critical infractions that severely impact the community</td>
+                    <td>Non-Appealable Permanent Ban</td>
+                    <td>Exploiting, hacking, doxxing, real-life threats, hate speech</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="general">
+            <h2>General Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">G1:</span> <strong>Respect All Players</strong> – Harassment, discrimination, or bullying is not tolerated.
+            </div>
+            <div class="rule-definition">
+                <p>All players must be treated with respect regardless of their background, identity, or roleplay style. This includes refraining from personal attacks, discriminatory language, or targeted harassment.</p>
+                <p><strong>Examples of violations:</strong></p>
+                <ul>
+                    <li>Using slurs or derogatory language</li>
+                    <li>Targeting specific players repeatedly</li>
+                    <li>Making discriminatory comments about race, gender, sexuality, etc.</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">G2:</span> <strong>Follow Roblox ToS</strong> – Comply with Roblox Terms of Service and Community Guidelines.
+            </div>
+            <div class="rule-definition">
+                <p>All staff members must adhere to the official Roblox Terms of Service and Community Guidelines at all times. Violations may result in both in-game penalties and Roblox platform penalties.</p>
+                <p><strong>Key points:</strong></p>
+                <ul>
+                    <li>No discussion of illegal activities</li>
+                    <li>No sharing personal information</li>
+                    <li>No bypassing chat filters</li>
+                    <li>No discussion of dating or romantic relationships</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">G3:</span> <strong>Staff Instructions</strong> – Follow staff directions. Disputes must be handled privately afterward.
+            </div>
+            <div class="rule-definition">
+                <p>Players must follow instructions from staff members. If a player disagrees with a staff decision, they must comply in the moment and address concerns through proper channels afterward.</p>
+                <p><strong>Proper dispute resolution:</strong></p>
+                <ul>
+                    <li>Submit a formal appeal through the designated Discord channel</li>
+                    <li>Provide evidence and context for the dispute</li>
+                    <li>Wait for a response from senior staff</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">G4:</span> <strong>Appropriate Content</strong> – No explicit, offensive, or NSFW content in usernames, chat, or avatars.
+            </div>
+            <div class="rule-definition">
+                <p>All content visible to other players must be appropriate for all ages. This includes usernames, chat messages, avatars, and any other user-generated content.</p>
+                <p><strong>Prohibited content includes:</strong></p>
+                <ul>
+                    <li>Sexual or suggestive content</li>
+                    <li>Graphic violence or gore</li>
+                    <li>Drug references</li>
+                    <li>Offensive symbols or imagery</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">G5:</span> <strong>No Exploiting</strong> – Use of hacks, glitches, or unauthorized tools results in immediate ban.
+            </div>
+            <div class="rule-definition">
+                <p>Players must not use any unauthorized methods to gain advantages or disrupt gameplay. This includes hacks, exploits, glitches, or third-party tools.</p>
+                <p><strong>Examples of exploiting:</strong></p>
+                <ul>
+                    <li>Using speed hacks or noclip</li>
+                    <li>Exploiting game mechanics to bypass intended limitations</li>
+                    <li>Using auto-clickers or macros</li>
+                    <li>Intentionally causing server lag or crashes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="roleplay">
+            <h2>Roleplay Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">RP1:</span> <strong>Stay In Character</strong> – Remain in-character during gameplay. Use /b for out-of-character chat.
+            </div>
+            <div class="rule-definition">
+                <p>Players must maintain their character's persona during roleplay. Out-of-character (OOC) communication should be kept to a minimum and only used when necessary through the appropriate channels.</p>
+                <p><strong>Example:</strong></p>
+                <div class="example">
+                    <p><strong>In-Character:</strong> "Officer, I was just trying to get to the hospital quickly because my friend is hurt."</p>
+                    <p><strong>Out-of-Character (using /b):</strong> "/b Hey, my game is lagging, give me a second."</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP2:</span> <strong>No Metagaming</strong> – Do not use OOC knowledge in character decisions.
+            </div>
+            <div class="rule-definition">
+                <p>Metagaming occurs when a player uses information their character wouldn't realistically know to gain an advantage in roleplay. All character decisions must be based solely on information obtained through in-character interactions.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Using Discord chat information in-game, recognizing a player by their username rather than their character, or acting on information from outside the current roleplay scenario.</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Only acting on information your character has directly witnessed or been told about in-game.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP3:</span> <strong>No Powergaming</strong> – Avoid unrealistic actions and allow fair roleplay interaction.
+            </div>
+            <div class="rule-definition">
+                <p>Powergaming occurs when a player forces actions or outcomes on others without giving them a fair chance to respond or react. All interactions should allow for realistic responses and fair roleplay.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> "I shoot you in the head and you die instantly" or "I dodge all your bullets and knock you out with one punch."</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> "I aim my weapon at you" (allowing the other player to respond) or "I attempt to punch you" (giving the other player a chance to react).</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP4:</span> <strong>Value Your Life</strong> – Avoid actions that disregard character life value.
+            </div>
+            <div class="rule-definition">
+                <p>Players must roleplay as if their character values their life. This means avoiding unnecessarily dangerous situations and responding realistically to threats.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Continuing to fight when severely outnumbered or outgunned, or taunting someone who has a weapon pointed at you.</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Surrendering when at gunpoint, seeking medical attention when injured, or avoiding unnecessarily dangerous situations.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP5:</span> <strong>Realistic Roleplay</strong> – Keep actions grounded in realistic expectations.
+            </div>
+            <div class="rule-definition">
+                <p>All roleplay actions should be realistic and plausible within the context of the game world. Avoid superhuman abilities or unrealistic scenarios.</p>
+                <p><strong>Examples of Self-Harm Roleplay:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed (Self-Harm RP):</strong> "I'm going to jump! Back off!" (threatening self-harm as a roleplay tactic)</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> "I'm going to jump off of this bridge so my character can escape!" (jumping as a means of escape, not self-harm)</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP6:</span> <strong>No RDM</strong> – Killing without valid RP reason is prohibited.
+            </div>
+            <div class="rule-definition">
+                <p>Random Death Match (RDM) occurs when a player kills another player without any valid roleplay reason or prior interaction. All hostile actions must have proper roleplay justification.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Killing random players without interaction, or killing someone over a minor verbal disagreement.</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Killing in self-defense, as part of a properly initiated gang conflict, or during a robbery gone wrong after proper roleplay interaction.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP7:</span> <strong>No VDM</strong> – Vehicles must not be used as weapons without roleplay.
+            </div>
+            <div class="rule-definition">
+                <p>Vehicle Death Match (VDM) occurs when a player uses a vehicle as a weapon to kill or injure other players without proper roleplay justification.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Deliberately running over players on the sidewalk, ramming other vehicles without roleplay reason.</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Using a vehicle as part of a properly initiated chase scenario, or accidentally hitting someone during a high-stress roleplay situation.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">RP8:</span> <strong>Proper Scenarios</strong> – Avoid exaggerated or illogical roleplay scenarios.
+            </div>
+            <div class="rule-definition">
+                <p>Roleplay scenarios should be logical, realistic, and appropriate for the game world. Avoid creating situations that are overly dramatic, impossible, or disruptive to the overall roleplay environment.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Claiming to be an alien, having superpowers, or creating scenarios that would be impossible in a realistic setting.</p>
+                </div>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Creating scenarios that fit within the game's setting and lore, such as realistic criminal activities, business ventures, or social interactions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="communication">
+            <h2>Communication Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">C1:</span> <strong>Roleplay Chat</strong> – Use local chat for character dialogue only.
+            </div>
+            <div class="rule-definition">
+                <p>Local chat should only be used for in-character dialogue. All communication in this channel should be from the perspective of your character.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> "Hey, do you know where the nearest gas station is?" (in-character question)</p>
+                </div>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> "Can someone help me with the controls?" (out-of-character question)</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">C2:</span> <strong>OOC Communication</strong> – Minimize OOC chat and keep it respectful.
+            </div>
+            <div class="rule-definition">
+                <p>Out-of-character (OOC) communication should be kept to a minimum and only used when necessary. When using OOC chat, keep it respectful and relevant.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example allowed">
+                    <p><strong>Allowed OOC:</strong> "/b My game is lagging, give me a moment please."</p>
+                </div>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed OOC:</strong> "/b This server is boring" or excessive OOC chatting that disrupts roleplay.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">C3:</span> <strong>No Mic Spam</strong> – No disruptive or irrelevant voice activity.
+            </div>
+            <div class="rule-definition">
+                <p>Voice chat must be used appropriately without spamming, playing music, or making disruptive noises. Voice communication should enhance roleplay, not disrupt it.</p>
+                <p><strong>Examples of prohibited behavior:</strong></p>
+                <ul>
+                    <li>Playing music through microphone</li>
+                    <li>Making loud or disruptive noises</li>
+                    <li>Talking over others repeatedly</li>
+                    <li>Using voice changers disruptively</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">C4:</span> <strong>Language</strong> – Maintain appropriate language. No offensive or excessive profanity.
+            </div>
+            <div class="rule-definition">
+                <p>While some mild profanity may be acceptable in appropriate roleplay contexts, excessive or offensive language is prohibited. All communication should remain appropriate for a diverse community.</p>
+                <p><strong>Guidelines:</strong></p>
+                <ul>
+                    <li>Mild profanity is allowed in appropriate contexts</li>
+                    <li>No slurs or deeply offensive language</li>
+                    <li>No excessive profanity that disrupts roleplay</li>
+                    <li>Context-appropriate language (e.g., professional in professional settings)</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">C5:</span> <strong>Emergency Services</strong> – Emergency lines must only be used for RP emergencies.
+            </div>
+            <div class="rule-definition">
+                <p>Emergency service communication channels (911, police radio, etc.) should only be used for legitimate roleplay emergencies. Misuse of these channels disrupts emergency service roleplay.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Calling 911 to report a robbery, accident, or medical emergency.</p>
+                </div>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Calling 911 as a prank, to ask non-emergency questions, or to harass emergency services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vehicle">
+            <h2>Vehicle Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">V1:</span> <strong>Vehicle Operation</strong> – Drive responsibly within RP. Break rules only with RP context.
+            </div>
+            <div class="rule-definition">
+                <p>Vehicles should be operated in a manner consistent with realistic driving behavior. Traffic laws should generally be followed unless there is a specific roleplay reason to break them.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Speeding during a chase, running red lights while rushing to the hospital in an emergency.</p>
+                </div>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Driving recklessly without roleplay reason, intentionally causing accidents for fun.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">V2:</span> <strong>Vehicle Theft</strong> – Must have RP justification and process.
+            </div>
+            <div class="rule-definition">
+                <p>Vehicle theft must have proper roleplay justification and follow a realistic process. Random theft without roleplay is prohibited.</p>
+                <p><strong>Proper vehicle theft process:</strong></p>
+                <ol>
+                    <li>Establish roleplay reason for the theft</li>
+                    <li>Attempt to gain access to the vehicle through roleplay (lockpicking, carjacking, etc.)</li>
+                    <li>Allow for potential intervention or response from the vehicle owner or law enforcement</li>
+                </ol>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">V3:</span> <strong>Property Respect</strong> – RP is required for any property damage or trespass.
+            </div>
+            <div class="rule-definition">
+                <p>Damaging property or trespassing must have proper roleplay justification. Random property damage or trespassing without roleplay context is prohibited.</p>
+                <p><strong>Examples:</strong></p>
+                <div class="example allowed">
+                    <p><strong>Allowed:</strong> Breaking into a building as part of a planned robbery, damaging a vehicle during a chase.</p>
+                </div>
+                <div class="example not-allowed">
+                    <p><strong>Not Allowed:</strong> Randomly breaking windows, entering private property without roleplay reason.</p>
+                </div>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">V4:</span> <strong>Parking</strong> – Vehicles must not obstruct essential access areas.
+            </div>
+            <div class="rule-definition">
+                <p>Vehicles should be parked in appropriate locations and should not obstruct essential areas such as entrances, emergency vehicle access points, or high-traffic areas.</p>
+                <p><strong>Prohibited parking:</strong></p>
+                <ul>
+                    <li>Blocking hospital entrances</li>
+                    <li>Blocking police station access</li>
+                    <li>Parking in the middle of roads</li>
+                    <li>Intentionally blocking other players' vehicles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="faction">
+            <h2>Faction Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">F1:</span> <strong>Job Requirements</strong> – Follow duties and regulations tied to your faction or job.
+            </div>
+            <div class="rule-definition">
+                <p>Players must adhere to the specific requirements and regulations of their chosen faction or job. Each role has specific responsibilities that must be fulfilled.</p>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li>Police officers must enforce laws and protect citizens</li>
+                    <li>Medical personnel must provide healthcare to all patients</li>
+                    <li>Government officials must follow proper procedures</li>
+                    <li>Criminal organizations must maintain their hierarchy and operations</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">F2:</span> <strong>Corruption</strong> – Staff approval required for corruption RP.
+            </div>
+            <div class="rule-definition">
+                <p>Roleplay involving corruption (such as corrupt police officers or government officials) requires prior approval from staff. This ensures that corruption roleplay is balanced and does not negatively impact the server.</p>
+                <p><strong>Corruption approval process:</strong></p>
+                <ol>
+                    <li>Submit a detailed plan to staff through the designated channel</li>
+                    <li>Include the scope, duration, and purpose of the corruption roleplay</li>
+                    <li>Wait for explicit approval before beginning</li>
+                    <li>Follow any limitations or guidelines provided by staff</li>
+                </ol>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">F3:</span> <strong>Criminal Activity</strong> – Must be well-planned and follow realistic execution.
+            </div>
+            <div class="rule-definition">
+                <p>Criminal activities must be well-planned and executed in a realistic manner. Random or poorly planned criminal activities that disrupt roleplay are prohibited.</p>
+                <p><strong>Guidelines for criminal roleplay:</strong></p>
+                <ul>
+                    <li>Plan activities thoroughly before execution</li>
+                    <li>Consider potential consequences and responses</li>
+                    <li>Maintain realistic expectations about success and failure</li>
+                    <li>Allow for appropriate law enforcement response</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">F4:</span> <strong>Gang/Group Conflicts</strong> – RP must justify conflicts. No random attacks.
+            </div>
+            <div class="rule-definition">
+                <p>Conflicts between gangs or groups must have proper roleplay justification. Random attacks or "war declarations" without prior roleplay context are prohibited.</p>
+                <p><strong>Proper conflict development:</strong></p>
+                <ol>
+                    <li>Establish roleplay tension or disagreement between groups</li>
+                    <li>Attempt negotiation or resolution through roleplay</li>
+                    <li>Escalate gradually if resolution fails</li>
+                    <li>Maintain realistic scope and intensity of conflict</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="administration">
+            <h2>Administration Rules</h2>
+            
+            <div class="rule">
+                <span class="rule-id">A1:</span> <strong>Reporting Issues</strong> – Submit reports with evidence to staff or Community Safety Associates.
+            </div>
+            <div class="rule-definition">
+                <p>All issues requiring staff intervention must be properly reported through the designated channels with sufficient evidence. This ensures that staff can address problems efficiently and fairly.</p>
+                <p><strong>Proper reporting process:</strong></p>
+                <ol>
+                    <li>Gather evidence (screenshots, recordings, timestamps)</li>
+                    <li>Submit a report through the designated Discord channel</li>
+                    <li>Include all relevant details (players involved, time, server)</li>
+                    <li>Wait for staff response without discussing the report publicly</li>
+                </ol>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">A2:</span> <strong>Staff Decisions</strong> – All staff decisions are final unless formally appealed.
+            </div>
+            <div class="rule-definition">
+                <p>Decisions made by staff members are considered final and must be respected. If a player believes a decision was unfair, they may submit a formal appeal through the proper channels.</p>
+                <p><strong>Appeal process:</strong></p>
+                <ol>
+                    <li>Submit a formal appeal through the designated Discord channel</li>
+                    <li>Include all relevant information and evidence</li>
+                    <li>Maintain respectful communication throughout the process</li>
+                    <li>Accept the final decision after the appeal has been reviewed</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="penalties">
+            <h2>Penalty System</h2>
+            
+            <div class="rule">
+                <span class="rule-id">P1:</span> <strong>Warning System</strong> – Minor infractions lead to warnings; repeated offenses escalate.
+            </div>
+            <div class="rule-definition">
+                <p>Warnings are issued for minor infractions. Accumulating multiple warnings will result in more severe penalties. Warnings are tracked and may affect future penalty decisions.</p>
+                <p><strong>Warning progression:</strong></p>
+                <ul>
+                    <li>First offense: Verbal warning</li>
+                    <li>Second offense: Formal warning (documented)</li>
+                    <li>Third offense: Final warning with potential temporary restrictions</li>
+                    <li>Further offenses: Escalation to temporary or permanent ban</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">P2:</span> <strong>Temporary Bans</strong> – Enforced for repeat or serious rule violations.
+            </div>
+            <div class="rule-definition">
+                <p>Temporary bans are issued for repeated minor infractions or moderate rule violations. The duration depends on the severity and frequency of the violations.</p>
+                <p><strong>Temporary ban durations:</strong></p>
+                <ul>
+                    <li>1 day: First temporary ban or minor repeated offense</li>
+                    <li>3 days: Second temporary ban or moderate offense</li>
+                    <li>5 days: Third temporary ban or serious offense</li>
+                    <li>7+ days: Multiple temporary bans or very serious offense</li>
+                </ul>
+            </div>
+            
+            <div class="rule">
+                <span class="rule-id">P3:</span> <strong>Permanent Bans</strong> – Applied to severe or persistent rule-breaking behavior.
+            </div>
+            <div class="rule-definition">
+                <p>Permanent bans are issued for severe rule violations or persistent rule-breaking despite previous penalties. Some permanent bans may be appealable, while others are not.</p>
+                <p><strong>Permanent ban categories:</strong></p>
+                <ul>
+                    <li>Appealable: Severe but potentially forgivable violations</li>
+                    <li>Non-appealable: Critical violations that fundamentally harm the community</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="discord-commands">
+            <h2>Discord Moderation Commands</h2>
+            <p>The following commands are available for staff to use in the Discord server for moderation purposes:</p>
+            
+            <table>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td><span class="command">/ban [username] [duration] [reason]</span></td>
+                    <td>Bans a user from the Discord server and Roblox game</td>
+                    <td><code>/ban JohnDoe 7d Repeated RDM violations</code></td>
+                </tr>
+                <tr>
+                    <td><span class="command">/warn [username] [reason]</span></td>
+                    <td>Issues a formal warning to a user</td>
+                    <td><code>/warn JaneDoe Inappropriate language in chat</code></td>
+                </tr>
+                <tr>
+                    <td><span class="command">/note [username] [context]</span></td>
+                    <td>Adds a note to a user's record without issuing a penalty</td>
+                    <td><code>/note PlayerXYZ Player was advised about proper RP etiquette</code></td>
+                </tr>
+            </table>
+            
+            <p><strong>Important Guidelines for Command Usage:</strong></p>
+            <ul>
+                <li>Always provide clear and specific reasons for warnings and bans</li>
+                <li>Document all moderation actions in the appropriate channels</li>
+                <li>Use the appropriate penalty class (A, B, C, D) when issuing penalties</li>
+                <li>Consult with senior staff for guidance on complex situations</li>
+            </ul>
+        </section>
+
+        <section id="ingame-commands">
+            <h2>In-Game Staff Commands</h2>
+            <p>The following commands are available for staff to use in-game:</p>
+            
+            <table>
+                <tr>
+                    <th>Command</th>
+                    <th>Description</th>
+                    <th>Usage Context</th>
+                </tr>
+                <tr>
+                    <td><span class="command">:fly</span></td>
+                    <td>Enables flight mode for staff</td>
+                    <td>Use for monitoring situations from above or reaching inaccessible areas</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:ff</span></td>
+                    <td>Enables forcefield (makes staff invulnerable)</td>
+                    <td>Use when moderating potentially dangerous situations</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:unff</span></td>
+                    <td>Disables forcefield</td>
+                    <td>Use to return to normal vulnerability state</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:to [username]</span></td>
+                    <td>Teleports staff to specified player</td>
+                    <td>Use to quickly respond to reports or check on suspicious activity</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:bring [username]</span></td>
+                    <td>Teleports specified player to staff</td>
+                    <td>Use for private discussions or removing players from problematic situations</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:m [message]</span></td>
+                    <td>Announces a message server-wide</td>
+                    <td>Use for important announcements or server-wide warnings</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:view [username]</span></td>
+                    <td>Allows staff to see from player's perspective</td>
+                    <td>Use for investigating potential rule violations or monitoring suspicious activity</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:god</span></td>
+                    <td>Enables god mode (invulnerability and special abilities)</td>
+                    <td>Use only in extreme situations requiring immediate intervention</td>
+                </tr>
+                <tr>
+                    <td><span class="command">:team [team name] [username]</span></td>
+                    <td>Changes a player's team assignment</td>
+                    <td>Use to correct team assignments or for administrative purposes</td>
+                </tr>
+            </table>
+            
+            <p><strong>Command Usage Guidelines:</strong></p>
+            <ul>
+                <li>Only use staff commands when necessary for moderation purposes</li>
+                <li>Avoid using commands in front of players when possible to maintain immersion</li>
+                <li>Document any significant command usage in staff logs</li>
+                <li>Never use commands for personal advantage or non-administrative purposes</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Last Updated: May 2, 2025</p>
+            <p>© Apex Interactive - All Rights Reserved</p>
+            <p>This handbook is subject to change. Staff members are responsible for staying updated with the latest rules.</p>
+        </footer>
+    </div>
+</body>
+</html>
